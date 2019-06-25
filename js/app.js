@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  doIntro();
   $('.ryu').mouseenter(function(){
     $('.ryu-still').hide();
     $('.ryu-ready').show();
@@ -30,6 +31,9 @@ $(document).ready(function(){
 
 $(document).keydown(function(e) {
   if (e.which == 88) {
+    playCool();
+    $('#theme-song')[0].pause();
+    $('#theme-song')[0].load();
     $('.ryu-still').hide();
     $('.ryu-ready').hide();
     $('.ryu-cool').show();
@@ -37,6 +41,9 @@ $(document).keydown(function(e) {
   })
 .keyup(function(e) {
   if (e.which == 88) {
+    $('#theme-song')[0].play();
+    $('#cool')[0].pause();
+    $('#cool')[0].load();
     $('.ryu-cool').hide();
     $('.ryu-ready').show();
   }
@@ -46,4 +53,27 @@ function playHadouken () {
   $('#hadouken-sound')[0].volume = 0.5;
   $('#hadouken-sound')[0].load();
   $('#hadouken-sound')[0].play();
+}
+
+function playCool() {
+  $('#cool')[0].volume = 0.5;
+  $('#cool')[0].play();
+}
+
+function doIntro() {
+  $('#theme-song')[0].volume = 0.5;
+  $('#theme-song')[0].play();
+  $('.sf-logo').fadeIn(3500, function() {
+    $('.sf-logo').fadeOut(1000, function() {
+      $('.brought-by').fadeIn(1500, function() {
+        $('.brought-by').fadeOut(1000, function() {
+          $('.jquery-logo').fadeIn(1500, function() {
+            $('.jquery-logo').fadeOut(1500, function() {
+              $('.how-to').fadeIn(1000);
+            });
+          })
+        })
+      })
+    })
+  })
 }

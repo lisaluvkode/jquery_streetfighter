@@ -3,6 +3,8 @@
   outline: red 1px solid;
 }
 */
+@font-face { font-family: comical; src: url("https://benjaminewhite.github.io/jquery-streetfighter-example/fonts/animeace2_reg.otf");
+}
 
 body{
   background-color: black;
@@ -21,6 +23,7 @@ body{
 .ryu{
   width: 659px;
   height: 494px;
+  float: left;
 }
 
 .ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool {
@@ -62,4 +65,50 @@ body{
 
 .ryu-cool {
   background-image: url('../images/ryu-cool.gif');
+}
+
+.text-content{
+  position: absolute;
+  width: 600px;
+  height: 425px;
+  padding-top: 75px;
+  left: 650px;
+}
+
+.how-to, .brought-by{
+  color: red;
+  width: 600px;
+  font-size: 50px;
+  font-family: comical;
+  display: none;
+}
+
+.brought-by{
+  text-align: center;
+  margin-top: 100px;
+}
+
+.how-to p{
+  width: 50%;
+  color: black;
+  font-size: 24px;
+  line-height: 45px;
+}
+
+.how-to p + p{
+  margin-left: 275px;
+}
+
+.sf-logo{
+  background-image: url('../images/sf-logo.png');
+  width: 682px;
+  height: 314px;
+}
+
+.jquery-logo{
+  background-image: url('../images/jquery-logo.png');
+  width: 500px;
+  height: 172px;
+  margin:50px auto 0;
+  display: none;
 }
